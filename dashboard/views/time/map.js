@@ -20,6 +20,6 @@ function(doc){
 			};
 			dev = doc.sensor_id;
 		}
-		emit([dev,time],doc);
+		emit([dev,time],null);
 	}
 }

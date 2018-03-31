@@ -33,6 +33,10 @@
     "to": "/_update/update/*"
   },
   {
+    "from": "/_active_tasks",
+    "to": "../../../_active_tasks"
+  },
+  {
     "from": "",
     "to": "index.html"
   },

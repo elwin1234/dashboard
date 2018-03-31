@@ -53,7 +53,7 @@ LiveKnobNumberTile = Class.create(LiveNumberTile,{
 			return this;
 		}
 		$(this.sSelector).append(
-			'<div class="number" style="display:none">'+this.sGetDisplayText()+'</div><input class="animate_number" value="'+this.iNumber+'"/>');
+			'<div class="number" style="display:none">'+this.sGetDisplayText()+'</div><input disabled="disabled" class="animate_number" value="'+this.iNumber+'"/>');
 		this.bRendered = true;
 		$(this.sSelector+' .animate_number').knob(this.options);
 		return this;
