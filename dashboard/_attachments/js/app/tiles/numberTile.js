@@ -9,7 +9,7 @@ NumberTile = Class.create(Tile,{
 		this.sPostText = "";
 		this.sPreText = "";
 		this.sSelector = a_sSelector;
-		this.oStyle = {"font-size":"80px","text-align":"center"};
+		this.oStyle = {"font-size":"80px","text-align":"center","width":"100%"};
 		this.iFadeSpeed = 500;
 		this.bRendered = false;
 	},
@@ -21,7 +21,7 @@ NumberTile = Class.create(Tile,{
 			return this;
 		}
 		$(this.sSelector).append(
-			'<div class="number" style="display:none">'+this.sGetDisplayText()+'</div><input class="animate_number" style="display:none" value="'+this.iNumber+'"/>');
+			'<div class="number" style="display:none">'+this.sGetDisplayText()+'</div><input style="font-size: 40px" class="animate_number" style="display:none" value="'+this.iNumber+'"/>');
 		$(this.sSelector+" .number").css(this.oStyle).fadeIn(this.iFadeSpeed);
 		this.bRendered = true;
 		return this;

@@ -6,7 +6,7 @@
  * @param secObj
  */
 
-function validate (newDoc, oldDoc, userCtx, secObj) {
+function (newDoc, oldDoc, userCtx, secObj) {
     var ddoc = this;
 
     secObj.admins = secObj.admins || {};

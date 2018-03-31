@@ -4,7 +4,8 @@ Rx.Observable.fromCouchDB = function (couchDB) {
 		var oChangeHandler = null;
 		$.couch.db(couchDB.name).info({
 			success: function(data) {
-				recentUpdateSeq = data.update_seq-50;
+
+				recentUpdateSeq = 'now';
 
 				var oOptions = {
 					feed:"normal",
@@ -59,8 +60,11 @@ Rx.Observable.fromCouchDBView = function(couchDB,options){
 			reduce:false,
 			update_seq : true,
 			success : function(data) {
+				if (!data.rows.length) {
+					observer.onError('No data for view', options);
+				}
 				$.each(data.rows,function(index,couchIndex){
-					myRet = couchIndex.value;
+					myRet = couchIndex.doc;
 					myRet._id = couchIndex.id;
 					myRet.timestamp = couchIndex.key[1];
 					observer.onNext(myRet);
