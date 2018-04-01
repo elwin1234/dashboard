@@ -1,4 +1,4 @@
-function update(doc,request){
+function (doc,request){
     var ddoc = this;
 
     // initiating response (redirect)
