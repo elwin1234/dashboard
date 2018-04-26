@@ -65,24 +65,24 @@ var viewTemperature_60m = Rx.Observable.fromCouchDBView(
         {device:TEMPERATURE_SENSOR_0},
         baseOptions60m));
 
-// var viewTemperature_1w_kweek = Rx.Observable.fromCouchDBView(
-//     $oDB,
-//     $.extend(
-//         {device:TEMPERATURE_SENSOR_1},
-//         baseOptions1w));
-//
-//
-// var viewTemperature_24h_kweek = Rx.Observable.fromCouchDBView(
-//     $oDB,
-//     $.extend(
-//         {device:TEMPERATURE_SENSOR_1},
-//         baseOptions24h));
-//
-// var viewTemperature_60m_kweek = Rx.Observable.fromCouchDBView(
-//     $oDB,
-//     $.extend(
-//         {device:TEMPERATURE_SENSOR_1},
-//         baseOptions60m));
+var viewTemperature_1w_kweek = Rx.Observable.fromCouchDBView(
+    $oDB,
+    $.extend(
+        {device:TEMPERATURE_SENSOR_1},
+        baseOptions1w));
+
+
+var viewTemperature_24h_kweek = Rx.Observable.fromCouchDBView(
+    $oDB,
+    $.extend(
+        {device:TEMPERATURE_SENSOR_1},
+        baseOptions24h));
+
+var viewTemperature_60m_kweek = Rx.Observable.fromCouchDBView(
+    $oDB,
+    $.extend(
+        {device:TEMPERATURE_SENSOR_1},
+        baseOptions60m));
 
 /*
  *    LOAD
@@ -241,63 +241,63 @@ graph2.vRender();
 // graph3.vSetSmooth(1);
 // graph3.vRender();
 
-// /****************************************************************
-//  *                                                              *
-//  *                     Kweekkasje                              *
-//  *                                                              *
-//  ****************************************************************/
-// // Create a 24hour graph
-// var graph6 = new GraphTile('#graph6',viewTemperature_24h_kweek.concat(temperatureStream_kweek).map(mapTemp),{
-//     range:range24hours,
-//     name: 'Kweekkasje - 24 uur',
-//     serie:{
-//         name : 'Temperatuur',
-//         data : [],
-//         color : '#c05020',
-//         strokeWidth : 0,
-//         renderer: 'area',
-//         interpolation: 'cardinal'
-//     },
-//     graphOptions: graphOptions
-// });
-//
-// graph6.vSetSmooth(1);
-// graph6.vRender();
-//
-// var graph7 = new GraphTile('#graph7',viewTemperature_60m_kweek.concat(temperatureStream_kweek).map(mapTemp),{
-//     range:range60minutes,
-//     name: 'Kweekkasje - 60 minuten',
-//     serie:{
-//         name : 'Temperatuur',
-//         data : [],
-//         color : '#c05020',
-//         strokeWidth : 0,
-//         renderer: 'area',
-//         interpolation: 'cardinal'
-//     },
-//     graphOptions: graphOptions
-// });
-//
-// graph7.vSetSmooth(1);
-// graph7.vRender();
-//
-// var graph8 = new GraphTile('#graph8',viewTemperature_1w_kweek.concat(temperatureStream_kweek).map(mapTemp),{
-//     range:range1week,
-//     name: 'Kweekkasje - 1 week',
-//     serie:{
-//         name : 'Temperatuur',
-//         data : [],
-//         color : '#c05020',
-//         strokeWidth : 0,
-//         renderer: 'area',
-//         interpolation: 'cardinal'
-//     },
-//     graphOptions: graphOptions
-// });
-//
-// graph8.vSetSmooth(1);
-// graph8.vRender();
-//
+/****************************************************************
+ *                                                              *
+ *                     Kweekkasje                              *
+ *                                                              *
+ ****************************************************************/
+// Create a 24hour graph
+var graph6 = new GraphTile('#graph6',viewTemperature_24h_kweek.concat(temperatureStream_kweek).map(mapTemp),{
+    range:range24hours,
+    name: 'Kweekkasje - 24 uur',
+    serie:{
+        name : 'Temperatuur',
+        data : [],
+        color : '#c05020',
+        strokeWidth : 0,
+        renderer: 'area',
+        interpolation: 'cardinal'
+    },
+    graphOptions: graphOptions
+});
+
+graph6.vSetSmooth(1);
+graph6.vRender();
+
+var graph7 = new GraphTile('#graph7',viewTemperature_60m_kweek.concat(temperatureStream_kweek).map(mapTemp),{
+    range:range60minutes,
+    name: 'Kweekkasje - 60 minuten',
+    serie:{
+        name : 'Temperatuur',
+        data : [],
+        color : '#c05020',
+        strokeWidth : 0,
+        renderer: 'area',
+        interpolation: 'cardinal'
+    },
+    graphOptions: graphOptions
+});
+
+graph7.vSetSmooth(1);
+graph7.vRender();
+
+var graph8 = new GraphTile('#graph8',viewTemperature_1w_kweek.concat(temperatureStream_kweek).map(mapTemp),{
+    range:range1week,
+    name: 'Kweekkasje - 1 week',
+    serie:{
+        name : 'Temperatuur',
+        data : [],
+        color : '#c05020',
+        strokeWidth : 0,
+        renderer: 'area',
+        interpolation: 'cardinal'
+    },
+    graphOptions: graphOptions
+});
+
+graph8.vSetSmooth(1);
+graph8.vRender();
+
 // /****************************************************************
 //  *                                                              *
 //  *                     LOAD                                     *
