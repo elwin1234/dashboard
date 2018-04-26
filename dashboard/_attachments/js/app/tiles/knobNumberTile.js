@@ -21,7 +21,10 @@ KnobNumberTile = Class.create(NumberTile,{
 			step:0.1,
 			min:0,
 			max:35,
-			tickColorizeValues: true
+			tickColorizeValues: true,
+      draw: function() {
+        $(this.i).css('font-size', '40px');
+      }
 		});
 		return this;
 	}
@@ -45,6 +48,9 @@ LiveKnobNumberTile = Class.create(LiveNumberTile,{
 			min:0,
 			max:3,
 			tickColorizeValues: true,
+      draw: function() {
+        $(this.i).css('font-size', '40px');
+      }
 		},options);
 	},
 	vRender : function(){

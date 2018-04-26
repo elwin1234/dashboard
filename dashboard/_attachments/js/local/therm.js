@@ -52,16 +52,7 @@ var desired = new LiveKnobNumberTile(
                 console.debug('sendDesiredTemperatureToCouch');
                 sendDesiredTemperatureToCouch(v);
             },POST_TIMEOUT);
-        },
-        change: function() {
-            console.debug('change!');
-        },
-        draw: function() {
-            // console.debug('draw!');
         }
-        // , format: function(v) {
-        //     return v+' C';
-        // },
     }
 );
 
